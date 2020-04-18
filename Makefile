@@ -1,3 +1,7 @@
+wire:
+	GO111MODULE=off go get github.com/google/wire/cmd/wire
+	wire ./...
+
 test:
 	go test -cover ./...
 
@@ -9,4 +13,4 @@ lint: fmt
 	go vet ./...
 	golint --set_exit_status ./... || exit "$$?"
 
-.PHONY: test fmt lint
+.PHONY: wire test fmt lint
